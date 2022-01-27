@@ -16,13 +16,14 @@ export const Container = styled.div`
         font-family: Roboto;
         font-style: normal;
         font-weight: 500;
-        font-size: 18px;
+        
         line-height: 21px;
         font-weight: bold;
 
         color: #FFFFFF;
 
-        h2 Link{
+        h2 {
+            font-size: 18px;
             &::first-letter{
             text-transform: uppercase;
             }

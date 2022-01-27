@@ -4,7 +4,7 @@ import logo from '../image/logo.png'
 import btn from '../image/btn.png'
 import { api } from '../services/api';
 import { Header, Main, Section } from '../styles/detailsstyle'
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 export default function Details(){
     const [pokemon, setPokemon] = useState({})

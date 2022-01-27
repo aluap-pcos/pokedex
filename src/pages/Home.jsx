@@ -2,13 +2,12 @@ import { useEffect, useState } from 'react';
 import Card from '../components/card/Card';
 import logo from '../image/logo.png'
 import { api } from '../services/api';
-import {Header, Main} from '../styles/homestyle'
+import {Header, Main, H2 } from '../styles/homestyle'
 
 
 export default function Home(){
     const [pokemons, setPokemons] = useState([]);
     const [search, setSearch] = useState('');
-    const [erro, setErro] = useState(false)
 
     useEffect(() => {
         api.get("/pokemons")
