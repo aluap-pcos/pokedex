@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react/cjs/react.development'
-import Bar from '../components/progress/Bar';
-import logo from '../image/logo.png'
-import btn from '../image/btn.png'
-import { api } from '../services/api';
-import { Header, Main, Section } from '../styles/detailsstyle'
+import Bar from '../../components/progress/Bar';
+import btn from '../../image/btn.png'
+import { api } from '../../services/api';
+import { Main, Section } from './detailsstyle'
 import { useParams, Link } from 'react-router-dom';
+import BtnFavorito from '../../components/btnFavorito/BtnFavorito';
+import Header from '../../components/header/Header';
+import { useFavoritosContext } from "../../common/contexts/favoritosContext";
 
 export default function Details(){
     const [pokemon, setPokemon] = useState({})
     let {route} = useParams();
+    const {favoritos, setFavoritos, adicionaFavorito, removeFavorito} = useFavoritosContext()
+    const jaFavoritado = favoritos.some(pokemons => pokemons.id === pokemon.id);
 
 
     useEffect(() => {
@@ -18,16 +22,15 @@ export default function Details(){
 
 
     return <>
-        <Header>
-            <h1><div><img src={logo} alt="Pokemon" /></div></h1>
-        </Header>
+        <Header/>
         
         <Main>
             <Section type={pokemon.types != undefined ? pokemon?.types[0] : ""}>
                 <div className='about'>
                     <Link to='/' className='linkHome'><img src={btn}/></Link>
                     <h2>{pokemon?.name}</h2>
-                    <p className='number'>001</p>
+                    <BtnFavorito marginLeft={8} marginTop={-1.8} favoritado={jaFavoritado} onClick={() => jaFavoritado ? removeFavorito(pokemon.id) : adicionaFavorito(pokemon) }/>
+                    <p className='number'>#00{pokemon?.id}</p>
                     <div className='image'>
                         <img src={pokemon?.image} alt={pokemon?.name}/>
                     </div>

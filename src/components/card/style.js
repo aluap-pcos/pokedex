@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
     text-align: center;
@@ -10,32 +11,32 @@ export const Container = styled.div`
     padding-top: 16px;
     margin-bottom: 50px;
 
-    .link{
+    text-decoration: none;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+        
+    line-height: 21px;
+    font-weight: bold;
+
+    color: #FFFFFF;
+
+    h2 {
         text-decoration: none;
-        text-align: center;
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: 500;
-        
-        line-height: 21px;
-        font-weight: bold;
-
-        color: #FFFFFF;
-
-        h2 {
-            font-size: 18px;
-            &::first-letter{
+        font-size: 18px;
+        &::first-letter{
             text-transform: uppercase;
-            }
         }
-
-        &::houver{
-            cursor: pointer;
-        }
-        
     }
 
+    &::houver{
+        cursor: pointer;
+    }
+        
+
     p{
+        text-decoration: none;
         text-align: center;
         font-family: Roboto;
         font-style: normal;
@@ -63,5 +64,24 @@ export const Container = styled.div`
             width: 130px;
             height: 130px;
         }
+    }
+`;
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
+`;
+
+export const Favoritado = styled.div`
+    position: absolute;
+    width: 0.5em;
+    height: 0.5em;
+
+    img{
+        width: 1em;
+        height: 1em;
     }
 `;

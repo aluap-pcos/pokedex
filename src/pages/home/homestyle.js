@@ -1,20 +1,10 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 50px;
-    align-items: center;
-
-    .logo{
-        width: 186px;
-        margin: auto;
-        margin-bottom: 50px;
-    }
-
-    .formulario{
+export const Search = styled.div`
         width: 900px;
         margin: auto;
+        margin-top: -25px;
+        margin-bottom: 50px;
 
         input{
             width: 80%;
@@ -40,7 +30,6 @@ export const Header = styled.header`
             background: #3763AD;
             border-radius: 10px;
         }
-    }
 `;
 
 export const Main = styled.main`
