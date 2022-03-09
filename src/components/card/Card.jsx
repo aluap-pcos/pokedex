@@ -13,7 +13,7 @@ export default function Card(props){
             <h2>{props.pokemon.name}</h2>
             <p>#00{props.pokemon.id}</p> 
             <div>
-                <img src={props.pokemon.image}/>
+                <img src={props.pokemon.image} alt="Imagem do pokémon"/>
             </div> 
         </Container>
     </StyledLink>

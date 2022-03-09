@@ -13,11 +13,12 @@ export default function Home(){
     let iniciou = false;
 
     useEffect(() => {
-        adicionarPokemons().then(inicializar);
-        console.log("pronto");
-        console.log(favoritos);
-        console.log(pokemons);
+        adicionarPokemons();
     }, [])
+
+    useEffect(() => {
+        inicializar();
+    }, [pokemons])
 
     return (
     <>
